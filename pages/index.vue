@@ -108,7 +108,7 @@ const editorThemeName = computed(() =>
             'opacity-40': conversionError != null,
           }"
         >
-          <CornerTag :visible="!inputFocused">CSS</CornerTag>
+          <CornerTag :visible="!outputFocused">CSS</CornerTag>
           <Editor
             :language="sassLanguage"
             v-model="throttledOutputCode"
