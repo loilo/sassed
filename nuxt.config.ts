@@ -4,6 +4,9 @@ const baseURL = (String(import.meta.env.BASE_URL ?? '') + '/').replace(
   '/',
 )
 
+import packages from './package-lock.json'
+const sassVersion = packages.packages['node_modules/sass'].version
+
 export default defineNuxtConfig({
   vite: {
     esbuild: {
@@ -30,6 +33,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseURL,
+      sassVersion,
     },
   },
   css: ['~/assets/css/global.scss'],

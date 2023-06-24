@@ -7,6 +7,7 @@ import { EditorState } from '@codemirror/state'
 
 const themeToggle = useThemeToggle()
 const storableStateStore = useStorableStateStore()
+const runtimeConfig = useRuntimeConfig()
 
 const inputFocused = ref(false)
 const outputFocused = ref(false)
@@ -83,7 +84,12 @@ const editorThemeName = computed(() =>
 
       <template #left>
         <div class="relative h-full w-full">
-          <CornerTag :visible="!inputFocused">SCSS</CornerTag>
+          <CornerTag :visible="!inputFocused"
+            >SCSS
+            <small class="ml-1">{{
+              runtimeConfig.public.sassVersion
+            }}</small></CornerTag
+          >
           <Editor
             :language="sassLanguage"
             v-model="storableStateStore.inputCode"
