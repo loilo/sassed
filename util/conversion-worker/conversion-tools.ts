@@ -36,16 +36,55 @@ class OffsetHelper {
     return this.getOffsetForLine(lineNumber) + (columnNumber - 1)
   }
 
+  /**
+   * Error locations are (apparently) not provided programmatically by the Sass compiler,
+   * so we have to parse the error message code frame to get the offset.
+   */
   getOffsetFromErrorMessage(
     errorMessage: string,
   ): [start: number, end: number] {
-    errorMessage = errorMessage.split('┌')[0]
+    // There can be secondary code frames (e.g. with function definitions, when a parameter was omitted)
+    // Those have to be cut off to find the correct line numbers for the main code frame.
 
-    const lineNumberMatches = [...errorMessage.matchAll(/^(\d+) │/gm)]
+    // Split by external function declaration, e.g.:
+    //   ╷
+    // 2 │     color: math.div(
+    //   │ ┌──────────^
+    // 3 │ │     5,
+    // 4 │ │     );
+    //   │ └─────^ invocation
+    //   ╵
+    //   ┌──> sass:math
+    // 1 │   @function div($number1, $number2) {
+    //   │             ━━━━━━━━━━━━━━━━━━━━━━━ declaration
+    //   ╵
+    errorMessage = errorMessage.split(/^\s+┌/m)[0]
+
+    // Split by in-snippet function declaration, e.g.:
+    //   ╷
+    // 2 │     color: test(
+    //   │ ┌──────────^
+    // 3 │ │     5,
+    // 4 │ │     );
+    //   │ └─────^ invocation
+    //   ╵
+    //   ╷
+    // 20│   @function test($x, $y) {
+    //   │             ━━━━━━━━━━━━ declaration
+    errorMessage = errorMessage.split(/^\s+╵\s*╷/m)[0]
+
+    // Find first and last line number in the code frame
+    const lineNumberMatches = [...errorMessage.matchAll(/^(\d+) *│/gm)]
     const startLine = Number(lineNumberMatches[0][1])
     const endLine = Number(lineNumberMatches.at(-1)?.[1] ?? startLine)
 
-    let startColumn: number, endColumn: number, diff: number
+    let startColumn: number, endColumn: number
+
+    // Single line error - pattern:
+    //   ╷
+    // 2 │   order: 5 * null;
+    //   │          ^^^^^^^^
+    //   ╵
     if (startLine === endLine) {
       const columnMatch = errorMessage.match(/^\s+│ (\s*)(\^+)/m)
       if (!columnMatch) return [0, 0]
@@ -53,17 +92,48 @@ class OffsetHelper {
       startColumn = columnMatch[1].length
       endColumn = startColumn + columnMatch[2].length
     } else {
-      console.log('MSG', errorMessage)
       const columnMatches = [...errorMessage.matchAll(/^\s+│ \s*(\^+)/gm)]
 
-      // Remove 3 characters for the code frame offset
-      startColumn = columnMatches[0][1].length - 3
-      endColumn = columnMatches[1][1].length - 3
+      if (columnMatches.length === 2) {
+        // Multi-line error - cannot give reproducable pattern, not sure which error reproduced this.
+
+        // Remove 3 characters for the code frame offset
+        startColumn = columnMatches[0][1].length - 3
+        endColumn = columnMatches[1][1].length - 3
+      } else {
+        // Multi-line error - alternative pattern (start of error bracket
+        // can also be formatted like end and vice versa):
+        //   ╷
+        // 4 │ ┌   @include m {
+        // 5 │ │     color: red;
+        // 6 │ │   } color: blue;
+        //   │ └───^
+        //   ╵
+        const columnMatches = [
+          ...errorMessage.matchAll(/^(\s*\d+\s*│\s+[┌└] |\s+│ [┌└]─(─*\^+))/gm),
+        ]
+
+        if (columnMatches.length === 2) {
+          startColumn =
+            typeof columnMatches[0][2] === 'string'
+              ? columnMatches[0][2].length - 1
+              : 0
+          endColumn =
+            typeof columnMatches[1][2] === 'string'
+              ? columnMatches[1][2].length
+              : Infinity
+        } else {
+          startColumn = 0
+          endColumn = 0
+        }
+      }
     }
 
     return [
       this.getOffsetForLine(startLine) + startColumn,
-      this.getOffsetForLine(endLine) + endColumn,
+      Number.isFinite(endColumn)
+        ? this.getOffsetForLine(endLine) + endColumn
+        : this.getOffsetForLine(endLine + 1) - 1,
     ]
   }
 }
