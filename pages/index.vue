@@ -4,6 +4,7 @@ import * as lightTheme from '@/assets/theme-light'
 import { sass } from '@codemirror/lang-sass'
 import { Diagnostic, lintGutter, linter } from '@codemirror/lint'
 import { EditorState } from '@codemirror/state'
+import { placeholder } from '@codemirror/view'
 
 const themeToggle = useThemeToggle()
 const storableStateStore = useStorableStateStore()
@@ -56,7 +57,11 @@ const sassLinter = linter(() => {
   return diagnostics
 })
 
-const inputExtensions = [sassLinter, lintGutter()]
+const inputExtensions = [
+  sassLinter,
+  lintGutter(),
+  placeholder('Write your Sass code here...'),
+]
 const outputExtensions = [EditorState.readOnly.of(true)]
 
 const sassLanguage = sass()

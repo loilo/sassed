@@ -428,6 +428,9 @@ export const theme = EditorView.theme(
       fontWeight: '400',
       lineHeight: '1.6',
     },
+    '.cm-placeholder': {
+      color: colors.lightGrey,
+    },
     '&.cm-focused': {
       outline: 'none',
     },
