@@ -31,7 +31,7 @@
     "@codemirror/lint": "^6.4.0",
     "@codemirror/search": "^6.5.0",
     "@codemirror/state": "^6.2.1",
-    "@codemirror/view": "^6.15.0",
+    "@codemirror/view": "^6.15.3",
     "@nuxtjs/color-mode": "^3.2.0",
     "@vueuse/nuxt": "^10.2.1",
     "floating-vue": "^2.0.0-beta.24",
