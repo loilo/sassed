@@ -7,7 +7,4 @@ updates:
       time: '04:00'
     open-pull-requests-limit: 10
     ignore:
-      - dependency-name: '*'
-        update-types:
-          - 'version-update:semver-patch'
-          - 'version-update:semver-minor'
+      - dependency-name: '@types/node'
