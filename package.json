@@ -29,7 +29,7 @@
     "@codemirror/lang-sass": "^6.0.2",
     "@codemirror/language": "^6.9.0",
     "@codemirror/lint": "^6.4.2",
-    "@codemirror/search": "^6.5.2",
+    "@codemirror/search": "^6.5.3",
     "@codemirror/state": "^6.2.1",
     "@codemirror/view": "^6.19.0",
     "@nuxtjs/color-mode": "^3.2.0",
