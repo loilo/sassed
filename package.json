@@ -34,7 +34,7 @@
     "@codemirror/view": "^6.23.0",
     "@nuxtjs/color-mode": "^3.3.2",
     "@vueuse/nuxt": "^10.7.1",
-    "floating-vue": "^2.0.0-beta.24",
+    "floating-vue": "^5.0.2",
     "install": "^0.13.0",
     "lz-string": "^1.5.0"
   }
