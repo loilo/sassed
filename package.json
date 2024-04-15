@@ -24,7 +24,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@codemirror/autocomplete": "^6.15.0",
+    "@codemirror/autocomplete": "^6.16.0",
     "@codemirror/commands": "^6.3.3",
     "@codemirror/lang-sass": "^6.0.2",
     "@codemirror/language": "^6.10.1",
