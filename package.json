@@ -18,7 +18,7 @@
     "nuxt": "^3.11.2",
     "nuxt-headlessui": "^1.2.0",
     "pinia": "^2.1.7",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.0",
     "prettier-plugin-tailwindcss": "^0.6.1",
     "sass": "^1.77.4",
     "typescript": "^5.4.5"
