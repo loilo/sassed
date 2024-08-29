@@ -12,7 +12,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.4",
-    "@tailwindcss/typography": "^0.5.14",
+    "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^20",
     "@vite-pwa/nuxt": "^0.10.1",
     "nuxt": "^3.13.0",
