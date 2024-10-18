@@ -12,6 +12,13 @@ export default defineNuxtConfig({
     esbuild: {
       keepNames: true,
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
   },
   devServer: {
     port: 53344,
