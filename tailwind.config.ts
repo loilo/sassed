@@ -3,7 +3,7 @@ import plugin from 'tailwindcss/plugin'
 import typographyPlugin from '@tailwindcss/typography'
 
 export default {
-  content: ['./**/*.vue'],
+  content: ['./{pages,components}/*.vue'],
   darkMode: 'class',
   theme: {
     extend: {
