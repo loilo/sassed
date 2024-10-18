@@ -101,4 +101,5 @@ export default defineNuxtConfig({
     storageKey: 'theme',
     classSuffix: '',
   },
+  compatibilityDate: '2024-10-19',
 })
