@@ -1,5 +1,5 @@
 import { compileString } from 'sass'
-import { ConversionResult } from './conversion-utils'
+import type { ConversionResult } from './conversion-utils'
 
 class OffsetHelper {
   #code: string

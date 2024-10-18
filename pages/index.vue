@@ -2,7 +2,7 @@
 import * as darkTheme from '@/assets/theme-dark'
 import * as lightTheme from '@/assets/theme-light'
 import { sass } from '@codemirror/lang-sass'
-import { Diagnostic, lintGutter, linter } from '@codemirror/lint'
+import { type Diagnostic, lintGutter, linter } from '@codemirror/lint'
 import { EditorState } from '@codemirror/state'
 import { placeholder } from '@codemirror/view'
 
