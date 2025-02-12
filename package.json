@@ -11,7 +11,7 @@
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.13.1",
-    "@pinia/nuxt": "^0.9.0",
+    "@pinia/nuxt": "^0.10.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@vite-pwa/nuxt": "^0.10.6",
