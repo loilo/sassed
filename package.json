@@ -15,7 +15,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@vite-pwa/nuxt": "^0.10.6",
-    "nuxt": "^3.16.0",
+    "nuxt": "^3.16.1",
     "nuxt-headlessui": "^1.2.0",
     "pinia": "^3.0.1",
     "prettier": "^3.5.3",
