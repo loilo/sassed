@@ -94,9 +94,6 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./stores'],
   },
-  pinia: {
-    autoImports: ['defineStore', 'acceptHMRUpdate'],
-  },
   colorMode: {
     storageKey: 'theme',
     classSuffix: '',

@@ -6,7 +6,7 @@ import { defineNuxtModule } from '@nuxt/kit'
 import fs from 'node:fs'
 import * as path from 'node:path'
 
-import consola from 'consola'
+import { consola } from 'consola'
 
 export default defineNuxtModule({
   async setup(_options, nuxt) {

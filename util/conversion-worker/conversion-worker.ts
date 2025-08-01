@@ -1,6 +1,7 @@
 // Handle the actual conversion
 import { convert } from './conversion-tools'
-import { ConversionWorkerResponse, validateMessage } from './conversion-utils'
+import type { ConversionWorkerResponse } from './conversion-utils'
+import { validateMessage } from './conversion-utils'
 
 addEventListener('message', event => {
   const data = event.data
