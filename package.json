@@ -20,7 +20,7 @@
     "pinia": "^3.0.3",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
-    "sass": "^1.93.2",
+    "sass": "^1.93.3",
     "typescript": "^5.9.2"
   },
   "dependencies": {
