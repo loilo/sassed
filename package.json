@@ -17,7 +17,7 @@
     "@vite-pwa/nuxt": "^1.0.7",
     "nuxt": "^4.2.0",
     "nuxt-headlessui": "^1.2.1",
-    "pinia": "^3.0.3",
+    "pinia": "^3.0.4",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "sass": "^1.93.3",
