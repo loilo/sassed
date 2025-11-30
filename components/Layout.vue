@@ -16,6 +16,7 @@
     </div>
     <div
       class="col-span-1 col-start-1 row-span-1 row-start-3 min-h-0 min-w-0 md:col-start-3 md:row-start-1"
+      data-output
     >
       <slot name="right" />
     </div>
