@@ -75,12 +75,17 @@ const componentAttrs = computed(() => {
     }
   }
 })
+
+const passedAttrs = computed(() => ({
+  ...componentAttrs.value,
+  ...attrs,
+}))
 </script>
 
 <template>
   <component
     :is="component"
-    v-bind="{ ...componentAttrs, ...$attrs } as any"
+    v-bind="passedAttrs"
     :class="{ 'cursor-pointer': !disabled, 'cursor-default': disabled }"
   >
     <slot
