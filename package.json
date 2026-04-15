@@ -23,7 +23,7 @@
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "sass": "^1.99.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.20.1",
