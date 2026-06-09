@@ -14,7 +14,7 @@
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@pinia/nuxt": "^0.11.3",
     "@playwright/test": "^1.60.0",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^24",
     "@vite-pwa/nuxt": "^1.1.1",
     "nuxt": "^4.3.1",
