@@ -32,7 +32,7 @@
     "@codemirror/language": "^6.12.4",
     "@codemirror/lint": "^6.9.7",
     "@codemirror/search": "^6.7.1",
-    "@codemirror/state": "^6.7.0",
+    "@codemirror/state": "^6.7.1",
     "@codemirror/view": "^6.43.4",
     "@nuxtjs/color-mode": "^4.0.1",
     "@vueuse/nuxt": "^14.3.0",
