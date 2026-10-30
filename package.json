@@ -20,7 +20,7 @@
     "nuxt": "^4.6.3",
     "nuxt-headlessui": "^1.2.2",
     "pinia": "^4.1.0",
-    "prettier": "^3.9.9",
+    "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sass": "^1.106.1",
     "typescript": "^5.9.3"
