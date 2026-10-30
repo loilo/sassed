@@ -4,7 +4,7 @@ import type {
   WorkerMessage,
   ConversionWorkerResponse,
   ConversionResult,
-} from '~/util/conversion-worker/conversion-utils'
+} from '~/utils/conversion-worker/conversion-utils'
 
 import type { ToRefs } from 'vue'
 

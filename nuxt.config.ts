@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
     'nuxt-headlessui',
-    '~/modules/fix-manifest/module',
+    './modules/fix-manifest/module',
   ],
   app: {
     baseURL,
